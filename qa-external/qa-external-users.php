@@ -192,7 +192,7 @@ function qa_get_user_email($userid)
 		WHERE
 			u.username = #;',
 		$userid
-	));
+	), true);
 
 	if (!is_array($result))
 		return null;
