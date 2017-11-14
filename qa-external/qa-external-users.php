@@ -140,7 +140,7 @@ function qa_get_logged_in_user()
 
 	$options = array(
 		'http' => array(
-			'header' => 'Content-Type: application/x-www-forl-urlencoded\r\n',
+			'header' => 'Content-Type: application/x-www-form-urlencoded',
 			'method' => 'POST',
 			'content' => http_build_query(array('auth_token' => $_COOKIE['ouat'])),
 		),
