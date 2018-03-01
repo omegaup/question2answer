@@ -157,13 +157,17 @@ function qa_get_logged_in_user()
 		return null;
 	}
 
-	$admins = array('lhchavez', 'omegaup');
+	$admins = array(
+		'lhchavez' => QA_USER_LEVEL_SUPER,
+		'omegaup' => QA_USER_LEVEL_SUPER,
+		'Lilia' => QA_USER_LEVEL_MODERATOR
+	);
 	return array(
 		'userid' => $response->session->user->username,
 		'publicusername' => $response->session->user->username,
 		'email' => $response->session->email,
-		'level' => (in_array($response->session->user->username, $admins) ?
-			QA_USER_LEVEL_SUPER : QA_USER_LEVEL_BASIC),
+		'level' => (array_key_exists($response->session->user->username, $admins) ?
+			$admins[$response->session->user->username] : QA_USER_LEVEL_BASIC),
 	);
 }
 
