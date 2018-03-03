@@ -160,7 +160,7 @@ function qa_get_logged_in_user()
 	$admins = array(
 		'lhchavez' => QA_USER_LEVEL_SUPER,
 		'omegaup' => QA_USER_LEVEL_SUPER,
-		'Lilia' => QA_USER_LEVEL_MODERATOR
+		'Lilia' => QA_USER_LEVEL_MODERATOR,
 	);
 	return array(
 		'userid' => $response->session->user->username,
