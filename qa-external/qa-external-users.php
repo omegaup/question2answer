@@ -193,9 +193,11 @@ function qa_get_user_email($userid)
 		FROM
 			omegaup.Users u
 		INNER JOIN
+			omegaup.Identities i ON i.identity_id = u.main_identity_id
+		INNER JOIN
 			omegaup.Emails e ON e.email_id = u.main_email_id
 		WHERE
-			u.username = #;',
+			i.username = #;',
 		$userid
 	), true);
 
